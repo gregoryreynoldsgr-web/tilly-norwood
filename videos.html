@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Sadie Videos</title>
+<title>Tilly Videos</title>
 <style>
   body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;margin:0;background:#0b0b0b;color:#eee}
   .wrap{max-width:1100px;margin:0 auto;padding:28px}
@@ -29,31 +29,53 @@
   <div class="wrap">
     <header>
       <a class="home" href="/">← Home</a>
-      <h1>Sadie Videos</h1>
+      <h1>Tilly Videos</h1>
       <div style="width:64px"></div>
     </header>
 
     <section class="grid" id="videoGrid">
-      <!-- START: simple hardcoded entries (we’ll CMS-ify later) -->
-      <article class="card" data-yt="a8HrCgKoNR0">
+      <!-- START: entries -->
+      <article class="card" data-yt="Vo_PByL6iMQ">
         <div class="thumb">
-          <img src="https://img.youtube.com/vi/a8HrCgKoNR0/hqdefault.jpg" alt="Sadie Video 1">
+          <img src="https://img.youtube.com/vi/Vo_PByL6iMQ/hqdefault.jpg" alt="Tilly video 1">
           <span class="play">Play</span>
         </div>
         <div class="meta">
-          <p class="title">“Sadie” — Original Cut</p>
-          <p class="desc">The one that kicked this off.</p>
+          <p class="title">Tilly — Feature Cut #1</p>
+          <p class="desc">A standout Tilly moment.</p>
         </div>
       </article>
 
-      <article class="card" data-yt="GUdudLA56NA">
+      <article class="card" data-yt="_KEoIDR9Fr8">
         <div class="thumb">
-          <img src="https://img.youtube.com/vi/GUdudLA56NA/hqdefault.jpg" alt="Sadie Rock Version">
+          <img src="https://img.youtube.com/vi/_KEoIDR9Fr8/hqdefault.jpg" alt="Tilly video 2">
           <span class="play">Play</span>
         </div>
         <div class="meta">
-          <p class="title">“Sadie” — 80s Rock Version</p>
-          <p class="desc">Hard-driving, 80s vibe. 🔥</p>
+          <p class="title">Tilly — Feature Cut #2</p>
+          <p class="desc">Another look at the world’s first AI actress.</p>
+        </div>
+      </article>
+
+      <article class="card" data-yt="tGeeJbsOt3A">
+        <div class="thumb">
+          <img src="https://img.youtube.com/vi/tGeeJbsOt3A/hqdefault.jpg" alt="Tilly video 3">
+          <span class="play">Play</span>
+        </div>
+        <div class="meta">
+          <p class="title">Tilly — Feature Cut #3</p>
+          <p class="desc">Cinematic vibes.</p>
+        </div>
+      </article>
+
+      <article class="card" data-yt="XvCLdyiKft0">
+        <div class="thumb">
+          <img src="https://img.youtube.com/vi/XvCLdyiKft0/hqdefault.jpg" alt="Tilly video 4">
+          <span class="play">Play</span>
+        </div>
+        <div class="meta">
+          <p class="title">Tilly — Feature Cut #4</p>
+          <p class="desc">More Tilly. More story.</p>
         </div>
       </article>
       <!-- END -->
@@ -75,7 +97,7 @@
   function openPlayer(id){
     frame.innerHTML =
       `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1"
-        title="Sadie Video" frameborder="0"
+        title="Tilly Video" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
     lightbox.classList.add('open');
