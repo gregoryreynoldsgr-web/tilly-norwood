@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 
-  <!-- (Optional) Google tag — keep your existing ID or replace later -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD15GWTT54"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,73 +23,128 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 
-  <!-- (Optional) preload a hero video if you have one named landing.mp4 -->
-  <link rel="preload" as="video" href="./landing.mp4" type="video/mp4">
+  <!-- Preload the hero image -->
+  <link rel="preload" as="image" href="./landing.jpg" />
 
   <style>
     :root{
       --bg:#0b0b0e;
       --text:#f6f6f8;
       --muted:#b6b6c5;
-      --accent:#ff5fa2; /* Tilly pink */
+      --accent:#ff5fa2;
       --card:#111318;
       --chip:#181a21;
     }
-    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    }
     .wrap{max-width:1000px;margin:0 auto;padding:20px;position:relative;z-index:1}
     .page-background{position:fixed;inset:0;background:#0b0b0e;z-index:0}
-    .page-background::before,.page-background::after{content:"";position:absolute;top:0;bottom:0;width:15%;background:radial-gradient(circle at center, rgba(255,95,162,.22) 0%, rgba(255,95,162,0) 80%);pointer-events:none;animation:sidePulse 8s ease-in-out infinite alternate}
-    .page-background::before{left:0}.page-background::after{right:0}
+    .page-background::before,.page-background::after{
+      content:"";position:absolute;top:0;bottom:0;width:15%;
+      background:radial-gradient(circle at center, rgba(255,95,162,.22) 0%, rgba(255,95,162,0) 80%);
+      pointer-events:none;animation:sidePulse 8s ease-in-out infinite alternate;
+    }
+    .page-background::before{left:0}
+    .page-background::after{right:0}
     @keyframes sidePulse{from{opacity:.25}to{opacity:.55}}
 
-    header{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;margin:6px 0 16px}
-    .tilly-sig{font-family:'Great Vibes',cursive;font-size:64px;color:var(--accent);line-height:1}
-    .tilly-sig a{color:inherit;text-decoration:none}
-    .tagline{font-family:'Cinzel',serif;font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.08em;color:#fff}
+    header{
+      display:flex;flex-direction:column;align-items:center;
+      gap:8px;text-align:center;margin:6px 0 16px;
+    }
+    .tilly-sig{
+      font-family:'Great Vibes',cursive;
+      font-size:64px;color:var(--accent);line-height:1;
+    }
+    .tilly-sig a{text-decoration:none;color:inherit;}
+    .tagline{
+      font-family:'Cinzel',serif;font-weight:700;text-transform:uppercase;
+      font-size:14px;letter-spacing:.08em;color:#fff;
+    }
 
     nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:4px}
-    .btn{display:inline-block;padding:.55rem 1rem;border-radius:9999px;background:#111;color:#fff;font-weight:600;text-decoration:none;border:1px solid #1c1f27;transition:transform .08s ease,opacity .2s ease}
+    .btn{
+      display:inline-block;padding:.55rem 1rem;border-radius:9999px;
+      background:#111;color:#fff;font-weight:600;text-decoration:none;
+      border:1px solid #1c1f27;transition:transform .08s ease,opacity .2s ease;
+    }
     .btn:hover{opacity:.9;transform:translateY(-1px)}
-    .btn-new{background:linear-gradient(90deg,#1d2633,#222a38);border:1px solid #2c3647}
+    .btn-new{
+      background:linear-gradient(90deg,#1d2633,#222a38);
+      border:1px solid #2c3647;
+    }
 
-    /* marquee */
-    .marquee-wrap{position:relative;width:100%;overflow:hidden;margin:8px 0 6px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.45))}
-    .marquee-line{display:inline-block;white-space:nowrap;font-family:'Great Vibes',cursive;color:var(--accent);font-size:clamp(22px,3.2vw,34px);line-height:1.1;padding:6px 0;will-change:transform;animation:slideLeft 18s linear infinite;transform:translateX(100%)}
+    .marquee-wrap{position:relative;width:100%;overflow:hidden;margin:8px 0 6px}
+    .marquee-line{
+      display:inline-block;white-space:nowrap;font-family:'Great Vibes',cursive;
+      color:var(--accent);font-size:clamp(22px,3.2vw,34px);line-height:1.1;
+      padding:6px 0;animation:slideLeft 18s linear infinite;transform:translateX(100%);
+    }
     @keyframes slideLeft{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-    @media (prefers-reduced-motion:reduce){.marquee-line{animation:none;transform:none}}
+    @media (prefers-reduced-motion:reduce){
+      .marquee-line{animation:none;transform:none}
+    }
 
     figure{margin:0}
-    .hero{position:relative;height:100vh;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.45);z-index:1;background:#000;border-radius:14px}
-    .hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:
-      radial-gradient(200px 160px at 0 0, rgba(0,0,0,.45), transparent 70%),
-      radial-gradient(200px 160px at 100% 0, rgba(0,0,0,.18), transparent 70%),
-      radial-gradient(220px 180px at 0 100%, rgba(0,0,0,.18), transparent 70%),
-      radial-gradient(220px 180px at 100% 100%, rgba(0,0,0,.25), transparent 70%)}
-    .hero video{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center top;transform-origin:center;animation:slowZoom 20s ease-in-out forwards}
-    @keyframes slowZoom{0%{transform:scale(1)}100%{transform:scale(1.15)}}
-    @media (max-width:640px){.hero{height:100svh}.hero video{object-fit:cover;object-position:center 40%;animation:none}}
-    @media (min-width:1025px){.hero{height:88vh}.hero video{object-fit:contain;object-position:center center;animation:none}}
+    .hero{
+      position:relative;height:100vh;overflow:hidden;
+      border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.45);
+      background:#000;z-index:1;
+    }
+    .hero img{
+      width:100%;height:100%;object-fit:cover;object-position:center;
+    }
+    @media (max-width:640px){
+      .hero{height:100svh}
+      .hero img{object-position:center 40%}
+    }
 
-    .caption{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.7) 100%);padding:18px 20px}
+    .caption{
+      position:absolute;left:0;right:0;bottom:0;z-index:3;
+      background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.7) 100%);
+      padding:18px 20px;
+    }
     h1{margin:0;font-size:clamp(22px,4vw,38px)}
     p{margin:.4rem 0 0;color:#e6e6ee;max-width:70ch}
 
-    .feature{margin:18px auto 6px;display:grid;gap:12px;grid-template-columns:1fr;max-width:1000px}
-    .card{background:var(--card);border:1px solid #1e232c;border-radius:16px;padding:14px}
+    .feature{
+      margin:18px auto 6px;display:grid;gap:12px;
+      grid-template-columns:1fr;max-width:1000px;
+    }
+    .card{
+      background:var(--card);border:1px solid #1e232c;
+      border-radius:16px;padding:14px;
+    }
     .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-    .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid #232838;border-radius:999px;padding:.5rem .8rem;text-decoration:none;color:#eaeaf2;font-weight:600}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;background:var(--chip);
+      border:1px solid #232838;border-radius:999px;
+      padding:.5rem .8rem;text-decoration:none;color:#eaeaf2;font-weight:600;
+    }
     .chip:hover{opacity:.9;transform:translateY(-1px)}
 
-    footer{color:#8c8c9b;text-align:center;margin:28px 0 10px;font-size:.9rem}
-    @media (max-width:640px){nav{justify-content:center;gap:8px}.btn{font-size:.95rem;padding:.45rem .8rem}.tilly-sig{font-size:52px}}
+    footer{
+      color:#8c8c9b;text-align:center;margin:28px 0 10px;font-size:.9rem;
+    }
+
+    @media (max-width:640px){
+      nav{gap:8px}
+      .btn{font-size:.95rem;padding:.45rem .8rem}
+      .tilly-sig{font-size:52px}
+    }
   </style>
 </head>
+
 <body>
   <div class="page-background"></div>
 
   <div class="wrap">
     <header>
-      <div class="tilly-sig"><a href="/" aria-label="Tilly Norwood">Tilly Norwood</a></div>
+      <div class="tilly-sig"><a href="/">Tilly Norwood</a></div>
       <div class="tagline">The World’s First AI Actress</div>
 
       <nav>
@@ -99,29 +154,26 @@
         <a class="btn" href="/news">📰 Breaking News</a>
         <a class="btn" href="/gallery">📸 Gallery</a>
         <a class="btn" href="/about">📜 About Tilly</a>
-        <!-- Update this link to your latest longform -->
-        <a class="btn btn-new" href="https://www.youtube.com/@TillyNorwoodTV" target="_blank" rel="noopener noreferrer">✨ New on YouTube</a>
+        <a class="btn btn-new" href="https://www.youtube.com/@TillyNorwoodTV" target="_blank">✨ New on YouTube</a>
       </nav>
     </header>
 
     <!-- marquee -->
-    <div class="marquee-wrap" aria-label="International visitors announcement">
+    <div class="marquee-wrap">
       <div class="marquee-line">🌹 Welcome to the official home of Tilly Norwood — Dustwood, Breaking News & more in 4K. 🌹</div>
     </div>
 
-    <!-- hero: use landing.mp4 if present; otherwise drop an image named hero.jpg -->
+    <!-- HERO: static JPG -->
     <figure class="hero">
-      <video id="landingVideo" autoplay muted playsinline webkit-playsinline loop preload="auto" poster="./hero.jpg">
-        <source src="./landing.mp4" type="video/mp4" />
-      </video>
+      <img src="./landing.jpg" alt="Tilly Norwood" />
       <figcaption class="caption">
         <h1>the face you can’t forget.</h1>
         <p>Virtually born. Human touched. Stories that feel real — because they are to us.</p>
       </figcaption>
     </figure>
 
-    <!-- feature card -->
-    <section class="feature" aria-label="Featured link">
+    <!-- feature -->
+    <section class="feature">
       <div class="card">
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between">
           <div>
@@ -129,7 +181,7 @@
             <div style="opacity:.85">Watch the newest Tilly release on YouTube.</div>
           </div>
           <div class="chiprow">
-            <a class="chip" href="https://www.youtube.com/@TillyNorwoodTV" target="_blank" rel="noopener noreferrer">▶️ Watch on YouTube</a>
+            <a class="chip" href="https://www.youtube.com/@TillyNorwoodTV" target="_blank">▶️ Watch on YouTube</a>
           </div>
         </div>
       </div>
@@ -138,20 +190,5 @@
     <footer>© 2025 Tilly-Norwood.net — The Official AI Actress HQ</footer>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const v = document.getElementById('landingVideo');
-      if(!v) return;
-      v.setAttribute('autoplay',''); v.setAttribute('muted','');
-      v.setAttribute('playsinline',''); v.setAttribute('webkit-playsinline','');
-      v.muted = true; v.playsInline = true;
-      const tryPlay = () => v.play().catch(()=>{});
-      tryPlay();
-      document.addEventListener('visibilitychange',()=>{ if(!document.hidden) tryPlay(); });
-      const onFirstInteraction = () => { tryPlay(); window.removeEventListener('touchstart', onFirstInteraction); window.removeEventListener('click', onFirstInteraction); };
-      window.addEventListener('touchstart', onFirstInteraction, { once:true, passive:true });
-      window.addEventListener('click', onFirstInteraction, { once:true });
-    });
-  </script>
 </body>
 </html>
