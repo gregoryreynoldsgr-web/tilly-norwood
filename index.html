@@ -23,82 +23,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Preload the hero image -->
+  <!-- Preload -->
   <link rel="preload" as="image" href="./landing.jpg" />
 
   <style>
-    :root{ --bg:#0b0b0e; --text:#f6f6f8; --muted:#b6b6c5; --accent:#ff5fa2; --card:#111318; --chip:#181a21; }
-    html,body{ margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; }
+    :root{ --bg:#0b0b0e; --text:#f6f6f8; --accent:#ff5fa2; --card:#111318; --chip:#181a21; }
+    html,body{ margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui; }
     .wrap{ max-width:1000px; margin:0 auto; padding:20px; position:relative; z-index:1 }
-    .page-background{ position:fixed; inset:0; background:#0b0b0e; z-index:0 }
-    .page-background::before,.page-background::after{
-      content:""; position:absolute; top:0; bottom:0; width:15%;
-      background:radial-gradient(circle at center, rgba(255,95,162,.22) 0%, rgba(255,95,162,0) 80%);
-      pointer-events:none; animation:sidePulse 8s ease-in-out infinite alternate;
-    }
-    .page-background::before{ left:0 }
-    .page-background::after{ right:0 }
-    @keyframes sidePulse{ from{opacity:.25} to{opacity:.55} }
 
-    header{ display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; margin:6px 0 16px; }
-    .tilly-sig{ font-family:'Great Vibes',cursive; font-size:64px; color:var(--accent); line-height:1; }
+    header{ text-align:center; margin:6px 0 16px; }
+    .tilly-sig{ font-family:'Great Vibes',cursive; font-size:64px; color:var(--accent); }
     .tilly-sig a{ text-decoration:none; color:inherit; }
-    .tagline{ font-family:'Cinzel',serif; font-weight:700; text-transform:uppercase; font-size:14px; letter-spacing:.08em; color:#fff; }
+    .tagline{ font-family:'Cinzel',serif; font-weight:700; font-size:14px; letter-spacing:.08em; }
 
-    nav{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:4px }
-    .btn{
-      display:inline-block; padding:.55rem 1rem; border-radius:9999px;
-      background:#111; color:#fff; font-weight:600; text-decoration:none;
-      border:1px solid #1c1f27; transition:transform .08s ease, opacity .2s ease;
-    }
-    .btn:hover{ opacity:.9; transform:translateY(-1px) }
+    nav{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+    .btn{ padding:.55rem 1rem; border-radius:999px; background:#111; border:1px solid #1c1f27; color:#fff; text-decoration:none; font-weight:600; }
+    .btn:hover{ opacity:.9; transform:translateY(-1px); }
     .btn-new{ background:linear-gradient(90deg,#1d2633,#222a38); border:1px solid #2c3647; }
 
-    .marquee-wrap{ position:relative; width:100%; overflow:hidden; margin:8px 0 6px }
-    .marquee-line{
-      display:inline-block; white-space:nowrap; font-family:'Great Vibes',cursive;
-      color:var(--accent); font-size:clamp(22px,3.2vw,34px); line-height:1.1;
-      padding:6px 0; animation:slideLeft 18s linear infinite; transform:translateX(100%);
-    }
-    @keyframes slideLeft{ 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
-    @media (prefers-reduced-motion:reduce){ .marquee-line{ animation:none; transform:none } }
+    .marquee-wrap{ overflow:hidden; margin:12px 0; }
+    .marquee-line{ white-space:nowrap; font-family:'Great Vibes',cursive; font-size:clamp(22px,3vw,34px); color:var(--accent); animation:marq 18s linear infinite; }
+    @keyframes marq{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 
-    figure{ margin:0 }
+    /* --- HERO FIXED FULL VIEW WITHOUT CROPPING FOREHEAD --- */
     .hero{
-      position:relative; height:100vh; overflow:hidden;
-      border-radius:14px; box-shadow:0 12px 30px rgba(0,0,0,.45);
-      background:#000; z-index:1;
+      width:100%;
+      max-width:1000px;
+      margin:0 auto;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 12px 30px rgba(0,0,0,.45);
+      background:#000;
     }
-    .hero img{ width:100%; height:100%; object-fit:cover; object-position:center; }
-    @media (max-width:640px){ .hero{height:100svh} .hero img{object-position:center 40%} }
+    .hero img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      object-position:center top;    /* FIX: keep full face visible */
+    }
 
     .caption{
-      position:absolute; left:0; right:0; bottom:0; z-index:3;
-      background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.7) 100%);
+      position:absolute;
+      left:0;right:0;bottom:0;
+      background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.75) 100%);
       padding:18px 20px;
     }
-    h1{ margin:0; font-size:clamp(22px,4vw,38px) }
-    p{ margin:.4rem 0 0; color:#e6e6ee; max-width:70ch }
+    figure{ position:relative; margin:0; }
 
-    .feature{ margin:18px auto 6px; display:grid; gap:12px; grid-template-columns:1fr; max-width:1000px; }
-    .card{
-      background:var(--card); border:1px solid #1e232c;
-      border-radius:16px; padding:14px;
-    }
-    .chiprow{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px }
-    .chip{
-      display:inline-flex; align-items:center; gap:8px; background:var(--chip);
-      border:1px solid #232838; border-radius:999px;
-      padding:.5rem .8rem; text-decoration:none; color:#eaeaf2; font-weight:600;
-    }
-    .chip:hover{ opacity:.9; transform:translateY(-1px) }
+    h1{ margin:0; font-size:clamp(22px,4vw,38px); }
+    p{ margin:.4rem 0 0; max-width:70ch; }
 
-    footer{ color:#8c8c9b; text-align:center; margin:28px 0 10px; font-size:.9rem }
+    .feature{ margin:20px auto; }
+    .card{ background:var(--card); border:1px solid #1e232c; border-radius:16px; padding:14px; }
+    .chiprow{ display:flex; gap:8px; }
+    .chip{ padding:.5rem .8rem; border-radius:999px; background:var(--chip); border:1px solid #232838; color:#fff; text-decoration:none; font-weight:600; }
+
+    footer{ text-align:center; margin:28px 0 10px; color:#8c8c9b; font-size:.9rem; }
   </style>
 </head>
 
 <body>
-  <div class="page-background"></div>
   <div class="wrap">
 
     <header>
@@ -126,7 +111,7 @@
 
     <section class="feature">
       <div class="card">
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:space-between">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;">
           <div>
             <div style="font-weight:800;letter-spacing:.02em">Just Dropped</div>
             <div style="opacity:.85">Watch the newest Tilly release on YouTube.</div>
