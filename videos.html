@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sadie Videos</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;margin:0;background:#0b0b0b;color:#eee}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  a.home{color:#aaa;text-decoration:none}
+  h1{font-size:2rem;margin:.2rem 0 1rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:#151515;border-radius:14px;overflow:hidden;border:1px solid #222;cursor:pointer}
+  .thumb{position:relative;aspect-ratio:16/9;background:#000}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
+  .play{position:absolute;inset:auto 10px 10px auto;background:rgba(0,0,0,.6);padding:.4rem .6rem;border-radius:999px;font-size:.85rem}
+  .meta{padding:.75rem 1rem}
+  .title{font-weight:700;margin:0 0 .25rem;font-size:1rem}
+  .desc{margin:0;color:#aaa;font-size:.9rem}
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+  .lightbox.open{display:flex}
+  .frame{width:min(100%,960px);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+  .close{position:fixed;top:14px;right:14px;background:#111;color:#eee;border:1px solid #333;border-radius:999px;padding:.5rem .7rem;cursor:pointer}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="home" href="/">← Home</a>
+      <h1>Sadie Videos</h1>
+      <div style="width:64px"></div>
+    </header>
+
+    <section class="grid" id="videoGrid">
+      <!-- START: simple hardcoded entries (we’ll CMS-ify later) -->
+      <article class="card" data-yt="a8HrCgKoNR0">
+        <div class="thumb">
+          <img src="https://img.youtube.com/vi/a8HrCgKoNR0/hqdefault.jpg" alt="Sadie Video 1">
+          <span class="play">Play</span>
+        </div>
+        <div class="meta">
+          <p class="title">“Sadie” — Original Cut</p>
+          <p class="desc">The one that kicked this off.</p>
+        </div>
+      </article>
+
+      <article class="card" data-yt="GUdudLA56NA">
+        <div class="thumb">
+          <img src="https://img.youtube.com/vi/GUdudLA56NA/hqdefault.jpg" alt="Sadie Rock Version">
+          <span class="play">Play</span>
+        </div>
+        <div class="meta">
+          <p class="title">“Sadie” — 80s Rock Version</p>
+          <p class="desc">Hard-driving, 80s vibe. 🔥</p>
+        </div>
+      </article>
+      <!-- END -->
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="close" id="closeBtn">✕</button>
+    <div class="frame" id="frame"></div>
+  </div>
+
+<script>
+  const grid = document.getElementById('videoGrid');
+  const lightbox = document.getElementById('lightbox');
+  const frame = document.getElementById('frame');
+  const closeBtn = document.getElementById('closeBtn');
+
+  function openPlayer(id){
+    frame.innerHTML =
+      `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1"
+        title="Sadie Video" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    lightbox.classList.add('open');
+  }
+  function closePlayer(){
+    lightbox.classList.remove('open');
+    frame.innerHTML = '';
+  }
+
+  grid.addEventListener('click', (e)=>{
+    const card = e.target.closest('.card');
+    if(!card) return;
+    openPlayer(card.dataset.yt);
+  });
+  closeBtn.addEventListener('click', closePlayer);
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closePlayer(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closePlayer(); });
+</script>
+</body>
+</html>
