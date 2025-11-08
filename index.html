@@ -3,21 +3,20 @@
 <head>
   <meta charset="utf-8" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM158KG2QK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PM158KG2QK');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM158KG2QK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PM158KG2QK');
+  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tilly Norwood — The World’s First AI Actress</title>
   <meta name="description" content="Tilly Norwood — AI Actress. Dustwood, News, and cinematic shorts in 4K." />
   <meta property="og:title" content="Tilly Norwood" />
-  <meta property="og:description" content="Cinematic shorts and AI‑powered storytelling." />
+  <meta property="og:description" content="Cinematic shorts and AI-powered storytelling." />
   <meta property="og:type" content="website" />
 
   <!-- Fonts -->
@@ -28,26 +27,44 @@
   <link rel="preload" as="image" href="./landing.jpg" />
 
   <style>
-    :root{ --bg:#0b0b0e; --text:#f6f6f8; --accent:#ff5fa2; --card:#111318; --chip:#181a21; }
-    html,body{ margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui; }
-    .wrap{ max-width:1000px; margin:0 auto; padding:20px; position:relative; z-index:1 }
+    :root { 
+      --bg:#0b0b0e; 
+      --text:#f6f6f8; 
+      --accent:#ff5fa2; 
+      --card:#111318; 
+      --chip:#181a21; 
+      --sadie-blue:#4aa3ff;
+    }
 
-    header{ text-align:center; margin:6px 0 16px; }
-    .tilly-sig{ font-family:'Great Vibes',cursive; font-size:64px; color:var(--accent); }
-    .tilly-sig a{ text-decoration:none; color:inherit; }
-    .tagline{ font-family:'Cinzel',serif; font-weight:700; font-size:14px; letter-spacing:.08em; }
+    html,body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui; }
+    .wrap { max-width:1000px; margin:0 auto; padding:20px; position:relative; z-index:1 }
 
-    nav{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
-    .btn{ padding:.55rem 1rem; border-radius:999px; background:#111; border:1px solid #1c1f27; color:#fff; text-decoration:none; font-weight:600; }
-    .btn:hover{ opacity:.9; transform:translateY(-1px); }
-    .btn-new{ background:linear-gradient(90deg,#1d2633,#222a38); border:1px solid #2c3647; }
+    header { text-align:center; margin:6px 0 16px; }
+    .tilly-sig { font-family:'Great Vibes',cursive; font-size:64px; color:var(--accent); }
+    .tilly-sig a { text-decoration:none; color:inherit; }
+    .tagline { font-family:'Cinzel',serif; font-weight:700; font-size:14px; letter-spacing:.08em; }
 
-    .marquee-wrap{ overflow:hidden; margin:12px 0; }
-    .marquee-line{ white-space:nowrap; font-family:'Great Vibes',cursive; font-size:clamp(22px,3vw,34px); color:var(--accent); animation:marq 18s linear infinite; }
-    @keyframes marq{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+    nav { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+    .btn { padding:.55rem 1rem; border-radius:999px; background:#111; border:1px solid #1c1f27; color:#fff; text-decoration:none; font-weight:600; }
+    .btn:hover { opacity:.9; transform:translateY(-1px); }
+    .btn-new { background:linear-gradient(90deg,#1d2633,#222a38); border:1px solid #2c3647; }
 
-    /* --- HERO FIXED FULL VIEW WITHOUT CROPPING FOREHEAD --- */
-    .hero{
+    .marquee-wrap { overflow:hidden; margin:12px 0; }
+    .marquee-line { 
+      white-space:nowrap; 
+      font-family:'Great Vibes',cursive; 
+      font-size:clamp(22px,3vw,34px); 
+      color:var(--sadie-blue); /* UPDATED TO SADIE BLUE */
+      animation:marq 18s linear infinite; 
+    }
+
+    @keyframes marq {
+      0% { transform:translateX(100%) }
+      100% { transform:translateX(-100%) }
+    }
+
+    /* HERO */
+    .hero {
       width:100%;
       max-width:1000px;
       margin:0 auto;
@@ -56,31 +73,31 @@
       box-shadow:0 12px 30px rgba(0,0,0,.45);
       background:#000;
     }
-    .hero img{
+    .hero img {
       width:100%;
       height:auto;
       display:block;
       object-fit:cover;
-      object-position:center top;    /* FIX: keep full face visible */
+      object-position:center top;
     }
 
-    .caption{
+    .caption {
       position:absolute;
-      left:0;right:0;bottom:0;
+      left:0; right:0; bottom:0;
       background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.75) 100%);
       padding:18px 20px;
     }
-    figure{ position:relative; margin:0; }
+    figure { position:relative; margin:0; }
 
-    h1{ margin:0; font-size:clamp(22px,4vw,38px); }
-    p{ margin:.4rem 0 0; max-width:70ch; }
+    h1 { margin:0; font-size:clamp(22px,4vw,38px); }
+    p { margin:.4rem 0 0; max-width:70ch; }
 
-    .feature{ margin:20px auto; }
-    .card{ background:var(--card); border:1px solid #1e232c; border-radius:16px; padding:14px; }
-    .chiprow{ display:flex; gap:8px; }
-    .chip{ padding:.5rem .8rem; border-radius:999px; background:var(--chip); border:1px solid #232838; color:#fff; text-decoration:none; font-weight:600; }
+    .feature { margin:20px auto; }
+    .card { background:var(--card); border:1px solid #1e232c; border-radius:16px; padding:14px; }
+    .chiprow { display:flex; gap:8px; }
+    .chip { padding:.5rem .8rem; border-radius:999px; background:var(--chip); border:1px solid #232838; color:#fff; text-decoration:none; font-weight:600; }
 
-    footer{ text-align:center; margin:28px 0 10px; color:#8c8c9b; font-size:.9rem; }
+    footer { text-align:center; margin:28px 0 10px; color:#8c8c9b; font-size:.9rem; }
   </style>
 </head>
 
@@ -99,7 +116,7 @@
     </header>
 
     <div class="marquee-wrap">
-      <div class="marquee-line">🌹 Welcome to my world. I’m so glad you’re here! Our journey together starts now . . . 🌹</div>
+      <div class="marquee-line">🌹 Welcome to my world. I’m so glad you’re here! Our journey begins with you . . . 🌹</div>
     </div>
 
     <figure class="hero">
