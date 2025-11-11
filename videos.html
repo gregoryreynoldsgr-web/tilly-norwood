@@ -6,7 +6,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM158KG2QK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);} 
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-PM158KG2QK');
@@ -49,4 +49,119 @@
 
     <section class="grid" id="videoGrid">
 
-      <!-- NEW: Fake Bo
+     <article class="card" data-yt="Vo_PByL6iMQ">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/Vo_PByL6iMQ/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot 🔥</p>
+  </div>
+</article>
+
+<article class="card" data-yt="_KEoIDR9Fr8">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/_KEoIDR9Fr8/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot [Extended Cut] 🔥</p>
+  </div>
+</article>
+
+<article class="card" data-yt="tGeeJbsOt3A">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/tGeeJbsOt3A/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 BREAKING NEWS: AI Actress Tilly Norwood Hired as News Anchor and Starring Acting Role!</p>
+  </div>
+</article>
+
+<article class="card" data-yt="XvCLdyiKft0">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/XvCLdyiKft0/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 Tilly Norwood – Dustwood (Ep. 1): Whiskey</p>
+  </div>
+</article>
+
+
+    </section>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="close" id="closeBtn">✕</button>
+    <div class="frame">
+      <div id="ytPlayer"></div>
+    </div>
+  </div>
+
+<script>
+let player; // YouTube player instance
+const lightbox = document.getElementById('lightbox');
+const closeBtn = document.getElementById('closeBtn');
+const videoGrid = document.getElementById('videoGrid');
+let currentVideoId = null;
+
+// YouTube API creates the player
+function onYouTubeIframeAPIReady(){
+  player = new YT.Player('ytPlayer', {
+    height: '100%',
+    width: '100%',
+    videoId: '',
+    playerVars: {
+      rel: 0,
+      modestbranding: 1,
+      autoplay: 1,
+      controls: 1
+    },
+    events: {
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+// Detect when the video ends
+function onPlayerStateChange(event){
+  if(event.data === YT.PlayerState.ENDED){
+    closeVideo(); // auto-return to videos page
+  }
+}
+
+// Open the player
+function openVideo(id){
+  currentVideoId = id;
+  lightbox.classList.add('open');
+  player.loadVideoById(id);
+}
+
+// Close and reset
+function closeVideo(){
+  lightbox.classList.remove('open');
+  player.stopVideo();
+}
+
+videoGrid.addEventListener('click', (e)=>{
+  const card = e.target.closest('.card');
+  if(!card) return;
+  openVideo(card.dataset.yt);
+});
+
+closeBtn.addEventListener('click', closeVideo);
+
+lightbox.addEventListener('click', (e)=>{
+  if(e.target === lightbox) closeVideo();
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') closeVideo();
+});
+</script>
+
+</body>
+</html>
