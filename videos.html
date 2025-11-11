@@ -2,66 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM158KG2QK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'G-PM158KG2QK');
 </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tilly Norwood • Videos (Official)</title>
-<meta name="description" content="Watch full‑length Tilly Norwood videos — cinematic AI acting reels, Dustwood episodes, news desk features, and more.">
-<link rel="canonical" href="https://tilly-norwood.net/videos.html">
-
-<!-- Open Graph / Twitter -->
-<meta property="og:title" content="Tilly Norwood • Videos (Official)">
-<meta property="og:description" content="Full‑length cinematic videos from Tilly Norwood — including Dustwood and the NCC desk.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tilly-norwood.net/videos.html">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tilly Norwood • Videos (Official)">
-<meta name="twitter:description" content="Watch the latest long‑form videos from Tilly Norwood.">
-
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tilly Videos</title>
 <style>
-  :root{
-    --bg:#0b0b0e; --text:#f6f6f8; --muted:#b6b6c2; --card:#111318; --border:#1d2129; --accent:#8bd3ff;
-    --shadow:0 8px 22px rgba(0,0,0,.35);
-  }
-  html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  .wrap{max-width:1100px;margin:0 auto;padding:24px}
-  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-  a.home{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;background:#0f1014;border:1px solid rgba(255,255,255,.06);color:#fff;padding:.5rem .9rem;border-radius:999px;box-shadow:var(--shadow)}
-  a.home:hover{opacity:.95}
-  h1{font-size:clamp(1.6rem,2.4vw,2rem);margin:.2rem 0 .2rem}
-  .sub{color:var(--muted);font-size:.98rem}
-
-  /* Grid */
-  .grid{display:grid;gap:18px;grid-template-columns:repeat(1,minmax(0,1fr));align-items:start}
-  .card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--border);cursor:pointer;box-shadow:0 2px 14px rgba(0,0,0,.35);position:relative}
-  .badge{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.6);padding:.28rem .5rem;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.02em}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;margin:0;background:#0b0b0b;color:#eee}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  a.home{color:#aaa;text-decoration:none}
+  h1{font-size:2rem;margin:.2rem 0 1rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .card{background:#151515;border-radius:14px;overflow:hidden;border:1px solid #222;cursor:pointer}
   .thumb{position:relative;aspect-ratio:16/9;background:#000}
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
   .play{position:absolute;inset:auto 10px 10px auto;background:rgba(0,0,0,.6);padding:.4rem .6rem;border-radius:999px;font-size:.85rem}
   .meta{padding:.75rem 1rem}
-  .title{font-weight:800;margin:0 0 .15rem;font-size:1rem}
-  .desc{margin:0;color:var(--muted);font-size:.9rem}
+  .title{font-weight:700;margin:0 0 .25rem;font-size:1rem}
+  .desc{margin:0;color:#aaa;font-size:.9rem}
 
   /* Lightbox */
   .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
   .lightbox.open{display:flex}
   .frame{width:min(100%,960px);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;position:relative}
   .close{position:fixed;top:14px;right:14px;background:#111;color:#eee;border:1px solid #333;border-radius:999px;padding:.5rem .7rem;cursor:pointer}
-
-  footer{margin:26px 0 10px;text-align:center;color:#8c8c9b;font-size:.92rem}
-  @media (min-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-  @media (min-width:1024px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
-  .card{max-width:100%}
-  .thumb{aspect-ratio:16/9;}
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 
 <!-- YouTube Iframe API -->
@@ -70,78 +42,60 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="home" href="./index.html">← Home</a>
-      <div>
-        <h1>Tilly Norwood — Videos</h1>
-        <div class="sub">Full‑length features and episodes. Tap to play without leaving the page.</div>
-      </div>
+      <a class="home" href="/">← Home</a>
+      <h1>Tilly Videos</h1>
       <div style="width:64px"></div>
     </header>
 
     <section class="grid" id="videoGrid">
-      <!-- NEW / FEATURED: provided link (onDOOl2yFoY) -->
-      <article class="card" data-yt="onDOOl2yFoY">
-        <span class="badge">NEW • Featured</span>
-        <div class="thumb">
-          <img loading="lazy" src="https://img.youtube.com/vi/onDOOl2yFoY/hqdefault.jpg" alt="New Tilly Norwood video thumbnail">
-          <span class="play">Play</span>
-        </div>
-        <div class="meta">
-          <p class="title">🌹 Fake Bomb Scare! Tilly Norwood - Anchorwoman [End is Hilarious]</p>
-          <p class="desc">Latest long‑form upload from Tilly Norwood.</p>
-        </div>
-      </article>
-          <p class="desc">Latest long‑form upload from Tilly Norwood.</p>
-        </div>
-      </article>
 
-      <!-- Existing items (kept from your page) -->
-      <article class="card" data-yt="Vo_PByL6iMQ">
-        <div class="thumb">
-          <img loading="lazy" src="https://img.youtube.com/vi/Vo_PByL6iMQ/hqdefault.jpg" alt="Video thumbnail">
-          <span class="play">Play</span>
-        </div>
-        <div class="meta">
-          <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot 🔥</p>
-        </div>
-      </article>
+     <article class="card" data-yt="Vo_PByL6iMQ">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/Vo_PByL6iMQ/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot 🔥</p>
+  </div>
+</article>
 
-      <article class="card" data-yt="_KEoIDR9Fr8">
-        <div class="thumb">
-          <img loading="lazy" src="https://img.youtube.com/vi/_KEoIDR9Fr8/hqdefault.jpg" alt="Video thumbnail">
-          <span class="play">Play</span>
-        </div>
-        <div class="meta">
-          <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot [Extended Cut] 🔥</p>
-        </div>
-      </article>
+<article class="card" data-yt="_KEoIDR9Fr8">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/_KEoIDR9Fr8/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot [Extended Cut] 🔥</p>
+  </div>
+</article>
 
-      <article class="card" data-yt="tGeeJbsOt3A">
-        <div class="thumb">
-          <img loading="lazy" src="https://img.youtube.com/vi/tGeeJbsOt3A/hqdefault.jpg" alt="Video thumbnail">
-          <span class="play">Play</span>
-        </div>
-        <div class="meta">
-          <p class="title">🌹 BREAKING NEWS: AI Actress Tilly Norwood Hired as News Anchor and Starring Acting Role!</p>
-        </div>
-      </article>
+<article class="card" data-yt="tGeeJbsOt3A">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/tGeeJbsOt3A/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 BREAKING NEWS: AI Actress Tilly Norwood Hired as News Anchor and Starring Acting Role!</p>
+  </div>
+</article>
 
-      <article class="card" data-yt="XvCLdyiKft0">
-        <div class="thumb">
-          <img loading="lazy" src="https://img.youtube.com/vi/XvCLdyiKft0/hqdefault.jpg" alt="Video thumbnail">
-          <span class="play">Play</span>
-        </div>
-        <div class="meta">
-          <p class="title">🌹 Tilly Norwood – Dustwood (Ep. 1): Whiskey</p>
-        </div>
-      </article>
+<article class="card" data-yt="XvCLdyiKft0">
+  <div class="thumb">
+    <img src="https://img.youtube.com/vi/XvCLdyiKft0/hqdefault.jpg">
+    <span class="play">Play</span>
+  </div>
+  <div class="meta">
+    <p class="title">🌹 Tilly Norwood – Dustwood (Ep. 1): Whiskey</p>
+  </div>
+</article>
+
 
     </section>
   </div>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-label="Video player modal" role="dialog" aria-modal="true">
-    <button class="close" id="closeBtn" aria-label="Close">✕</button>
+  <div class="lightbox" id="lightbox">
+    <button class="close" id="closeBtn">✕</button>
     <div class="frame">
       <div id="ytPlayer"></div>
     </div>
@@ -164,8 +118,7 @@ function onYouTubeIframeAPIReady(){
       rel: 0,
       modestbranding: 1,
       autoplay: 1,
-      playsinline: 1,
-      origin: location.origin
+      controls: 1
     },
     events: {
       'onStateChange': onPlayerStateChange
@@ -190,7 +143,7 @@ function openVideo(id){
 // Close and reset
 function closeVideo(){
   lightbox.classList.remove('open');
-  try { player.stopVideo(); } catch(e) {}
+  player.stopVideo();
 }
 
 videoGrid.addEventListener('click', (e)=>{
@@ -200,16 +153,15 @@ videoGrid.addEventListener('click', (e)=>{
 });
 
 closeBtn.addEventListener('click', closeVideo);
-lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeVideo(); });
-document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeVideo(); });
 
-// Optional: set document title count
-(function(){
-  const total = document.querySelectorAll('#videoGrid .card').length;
-  document.title = `Tilly Norwood • Videos (${total})`;
-})();
+lightbox.addEventListener('click', (e)=>{
+  if(e.target === lightbox) closeVideo();
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') closeVideo();
+});
 </script>
 
-<footer>Last updated: <span id="updated">Nov 10, 2025</span> • © 2025 Tilly‑Norwood.net</footer>
 </body>
 </html>
