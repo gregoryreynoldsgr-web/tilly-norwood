@@ -1,177 +1,144 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM158KG2QK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
 
-  gtag('config', 'G-PM158KG2QK');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM158KG2QK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PM158KG2QK');
+  </script>
 
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tilly Videos</title>
-<style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;margin:0;background:#0b0b0b;color:#eee}
-  .wrap{max-width:1100px;margin:0 auto;padding:28px}
-  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-  a.home{color:#aaa;text-decoration:none}
-  h1{font-size:2rem;margin:.2rem 0 1rem}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-  .card{background:#151515;border-radius:14px;overflow:hidden;border:1px solid #222;cursor:pointer}
-  .thumb{position:relative;aspect-ratio:16/9;background:#000}
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
-  .play{position:absolute;inset:auto 10px 10px auto;background:rgba(0,0,0,.6);padding:.4rem .6rem;border-radius:999px;font-size:.85rem}
-  .meta{padding:.75rem 1rem}
-  .title{font-weight:700;margin:0 0 .25rem;font-size:1rem}
-  .desc{margin:0;color:#aaa;font-size:.9rem}
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tilly Norwood • Featured Video</title>
 
-  /* Lightbox */
-  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
-  .lightbox.open{display:flex}
-  .frame{width:min(100%,960px);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;position:relative}
-  .close{position:fixed;top:14px;right:14px;background:#111;color:#eee;border:1px solid #333;border-radius:999px;padding:.5rem .7rem;cursor:pointer}
-</style>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-<!-- YouTube Iframe API -->
-<script src="https://www.youtube.com/iframe_api"></script>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <a class="home" href="/">← Home</a>
-      <h1>Tilly Videos</h1>
-      <div style="width:64px"></div>
-    </header>
-
-    <section class="grid" id="videoGrid">
-
-      <article class="card" data-yt="onDOOl2yFoY">
-  <div class="thumb">
-    <img src="https://img.youtube.com/vi/onDOOl2yFoY/hqdefault.jpg">
-    <span class="play">Play</span>
-  </div>
-  <div class="meta">
-    <p class="title">🌹 Fake Bomb Scare! Tilly Norwood - Anchorwoman [End is Hilarious]</p>
-  </div>
-</article>
-
-     <article class="card" data-yt="Vo_PByL6iMQ">
-  <div class="thumb">
-    <img src="https://img.youtube.com/vi/Vo_PByL6iMQ/hqdefault.jpg">
-    <span class="play">Play</span>
-  </div>
-  <div class="meta">
-    <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot 🔥</p>
-  </div>
-</article>
-
-<article class="card" data-yt="_KEoIDR9Fr8">
-  <div class="thumb">
-    <img src="https://img.youtube.com/vi/_KEoIDR9Fr8/hqdefault.jpg">
-    <span class="play">Play</span>
-  </div>
-  <div class="meta">
-    <p class="title">🌹 Tilly Norwood | Sizzling Fashion Spot [Extended Cut] 🔥</p>
-  </div>
-</article>
-
-<article class="card" data-yt="tGeeJbsOt3A">
-  <div class="thumb">
-    <img src="https://img.youtube.com/vi/tGeeJbsOt3A/hqdefault.jpg">
-    <span class="play">Play</span>
-  </div>
-  <div class="meta">
-    <p class="title">🌹 BREAKING NEWS: AI Actress Tilly Norwood Hired as News Anchor and Starring Acting Role!</p>
-  </div>
-</article>
-
-<article class="card" data-yt="XvCLdyiKft0">
-  <div class="thumb">
-    <img src="https://img.youtube.com/vi/XvCLdyiKft0/hqdefault.jpg">
-    <span class="play">Play</span>
-  </div>
-  <div class="meta">
-    <p class="title">🌹 Tilly Norwood – Dustwood (Ep. 1): Whiskey</p>
-  </div>
-</article>
-
-
-    </section>
-  </div>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <button class="close" id="closeBtn">✕</button>
-    <div class="frame">
-      <div id="ytPlayer"></div>
-    </div>
-  </div>
-
-<script>
-let player; // YouTube player instance
-const lightbox = document.getElementById('lightbox');
-const closeBtn = document.getElementById('closeBtn');
-const videoGrid = document.getElementById('videoGrid');
-let currentVideoId = null;
-
-// YouTube API creates the player
-function onYouTubeIframeAPIReady(){
-  player = new YT.Player('ytPlayer', {
-    height: '100%',
-    width: '100%',
-    videoId: '',
-    playerVars: {
-      rel: 0,
-      modestbranding: 1,
-      autoplay: 1,
-      controls: 1
-    },
-    events: {
-      'onStateChange': onPlayerStateChange
+  <style>
+    :root{
+      --bg:#0b0b0e;
+      --text:#f6f6f8;
+      --accent:#ff5fa2; /* pink signature */
     }
-  });
-}
 
-// Detect when the video ends
-function onPlayerStateChange(event){
-  if(event.data === YT.PlayerState.ENDED){
-    closeVideo(); // auto-return to videos page
-  }
-}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
 
-// Open the player
-function openVideo(id){
-  currentVideoId = id;
-  lightbox.classList.add('open');
-  player.loadVideoById(id);
-}
+    .wrap{
+      max-width:1000px;
+      margin:0 auto;
+      padding:22px;
+    }
 
-// Close and reset
-function closeVideo(){
-  lightbox.classList.remove('open');
-  player.stopVideo();
-}
+    /* BACK TO HOME */
+    .topbar{
+      margin:0 -22px 0;
+      padding:16px 22px 10px;
+      background:#050506;
+      display:flex;
+    }
+    .back-home{
+      color:#fff;
+      background:#111;
+      padding:.45rem .9rem;
+      border-radius:9999px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .back-home:hover{ opacity:.9; }
 
-videoGrid.addEventListener('click', (e)=>{
-  const card = e.target.closest('.card');
-  if(!card) return;
-  openVideo(card.dataset.yt);
-});
+    /* HEADER SIGNATURE */
+    .header-bar{
+      text-align:center;
+      margin:0 -22px 28px;
+      padding:16px 22px 22px;
+      background:#050506;
+    }
+    .tilly-sig{
+      font-family:'Great Vibes',cursive;
+      font-size:78px;
+      color:var(--accent);
+    }
 
-closeBtn.addEventListener('click', closeVideo);
+    /* VIDEO FRAME */
+    .video-box{
+      width:100%;
+      max-width:900px;
+      margin:0 auto;
+      aspect-ratio:16/9;
+      background:#000;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 28px rgba(0,0,0,.55);
+    }
+    iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
 
-lightbox.addEventListener('click', (e)=>{
-  if(e.target === lightbox) closeVideo();
-});
+    /* SUBSCRIBE MESSAGE */
+    .subscribe-note{
+      margin:22px auto 0;
+      text-align:center;
+      font-size:1.1rem;
+      color:#ff5fa2;
+      font-family:'Great Vibes',cursive;
+      font-size:36px;
+    }
+    .subscribe-small{
+      font-size:1rem;
+      color:#ccc;
+      margin-top:6px;
+      font-family:system-ui;
+    }
 
-document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape') closeVideo();
-});
-</script>
+    footer{
+      text-align:center;
+      font-size:.9rem;
+      color:#8c8c9b;
+      margin:40px 0 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back-home" href="./index.html">← Back to Home</a>
+  </div>
+
+  <header class="header-bar">
+    <div class="tilly-sig">Tilly Norwood</div>
+  </header>
+
+  <!-- SINGLE FEATURED VIDEO -->
+  <div class="video-box">
+    <iframe 
+      src="https://www.youtube.com/embed/emeFzk0A9VA?rel=0&modestbranding=1&playsinline=1"
+      title="Tilly Norwood — Featured"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="subscribe-note">More stories are coming soon…</div>
+  <div class="subscribe-small">If you enjoyed this one, please subscribe — it truly helps.</div>
+
+  <footer>© 2025 Tilly-Norwood.net — Official Fan Page</footer>
+
+</div>
 
 </body>
 </html>
