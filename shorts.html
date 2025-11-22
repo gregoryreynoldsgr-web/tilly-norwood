@@ -17,80 +17,146 @@
   <meta name="description" content="Watch the latest Tilly Norwood YouTube Shorts — cinematic AI scenes in 9:16.">
   <link rel="canonical" href="https://tilly-norwood.net/shorts.html">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Tilly Norwood • YouTube Shorts — Official Fan Page">
-  <meta property="og:description" content="Cinematic AI shorts from the Tilly Norwood fan site.">
-  <meta property="og:type" content="website">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0b0b0e; --text:#f6f6f8; --accent:#8bd3ff; --muted:#b6b6c2; --card:#111318;
-      --ink:#111; --shadow:0 8px 22px rgba(0,0,0,.35);
+      --bg:#0b0b0e;
+      --text:#f6f6f8;
+      --accent:#ff5fa2; /* pink for Tilly logo */
+      --muted:#b6b6c2;
+      --card:#111318;
+      --shadow:0 8px 22px rgba(0,0,0,.35);
     }
+
     html,body{
-      margin:0; background:var(--bg); color:var(--text);
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
       font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
       line-height:1.5;
-    }
-    .wrap{ max-width:1000px; margin:0 auto; padding:20px; }
-
-    .topbar{display:flex; justify-content:flex-start; margin:6px 0 8px;}
-    .back-home{
-      display:inline-flex; align-items:center; gap:.6rem; padding:.55rem .95rem;
-      border-radius:9999px; background:var(--ink); color:#fff; font-weight:700;
-      text-decoration:none; border:1px solid rgba(255,255,255,0.06);
-      box-shadow:var(--shadow);
+      -webkit-font-smoothing:antialiased;
     }
 
-    header{ display:flex; flex-direction:column; align-items:center; text-align:center; margin:6px 0 10px; }
-    .tilly-sig{ font-family:'Great Vibes',cursive; font-size:64px; color:var(--accent); }
-    .tilly-sig a{ color:inherit; text-decoration:none; }
-
-    .ai-hq{
-      font-family:'Cinzel',serif;
-      font-weight:700;
-      letter-spacing:.08em;
-      font-size:14px;
-      color:#fff;
-      margin-top:4px;
+    .wrap{
+      max-width:1000px;
+      margin:0 auto;
+      padding:0 20px 20px;
     }
 
+    /* TOP BANNER LIKE SCREENSHOT */
+    .site-header{
+      margin:0 -20px 18px;
+    }
+    .tilly-banner{
+      background:#050506;
+      padding:10px 24px 12px;
+      text-align:left;
+    }
+    .tilly-banner span{
+      font-family:'Great Vibes',cursive;
+      font-size:40px;
+      color:var(--accent);
+      letter-spacing:.02em;
+      white-space:nowrap;
+    }
+    @media (min-width:768px){
+      .tilly-banner span{
+        font-size:52px;
+      }
+    }
+
+    .tagline{
+      text-align:center;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#e4e4eb;
+      margin-top:8px;
+    }
+
+    /* SHORTS GRID */
     .shorts-grid{
-      display:grid; gap:14px; justify-items:center; margin-top:18px;
+      display:grid;
+      gap:14px;
+      justify-items:center;
+      margin-top:18px;
       grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     }
 
     .short{
-      position:relative; width:100%; max-width:240px;
-      aspect-ratio:9/16; border-radius:12px; overflow:hidden;
-      background:#111; box-shadow:0 2px 14px rgba(0,0,0,.35);
+      position:relative;
+      width:100%;
+      max-width:240px;
+      aspect-ratio:9/16;
+      border-radius:12px;
+      overflow:hidden;
+      background:#111;
+      box-shadow:0 2px 14px rgba(0,0,0,.35);
     }
     .short iframe{
-      position:absolute; inset:0; width:100%; height:100%; border:0;
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:0;
     }
 
+    /* SEO BLOCK */
     .seo-block{
-      max-width:920px; margin:18px auto 0; background:var(--card);
-      border:1px solid rgba(139,211,255,.18); border-radius:14px;
+      max-width:920px;
+      margin:18px auto 0;
+      background:var(--card);
+      border:1px solid rgba(139,211,255,.18);
+      border-radius:14px;
       padding:18px;
+      box-shadow:var(--shadow);
     }
-    .seo-block h2{ margin:0 0 6px; }
-    .seo-block p{ margin:0; color:var(--muted); }
+    .seo-block h2{
+      margin:0 0 6px;
+      font-size:1.1rem;
+      letter-spacing:.02em;
+    }
+    .seo-block p{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
 
-    .counter-wrap{ margin:28px auto 6px; text-align:center; }
+    /* COUNTER */
+    .counter-wrap{
+      margin:28px auto 6px;
+      text-align:center;
+    }
     .counter-card{
-      width:100%; max-width:920px;
+      width:100%;
+      max-width:920px;
       background:linear-gradient(180deg, rgba(139,211,255,.10), rgba(139,211,255,.02));
-      border:1px solid rgba(139,211,255,.25); border-radius:16px;
+      border:1px solid rgba(139,211,255,.25);
+      border-radius:16px;
       padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .counter-line{
+      font-size:1.0rem;
     }
     .counter-number{
-      font-weight:900; font-size:clamp(2rem,5vw,3.2rem);
-      color:#ff4fa3; margin:6px 0 4px;
+      font-weight:900;
+      font-size:clamp(2rem,5vw,3.2rem);
+      color:#ff4fa3;
+      margin:6px 0 4px;
+    }
+    .counter-updated{
+      font-size:.9rem;
+      color:var(--muted);
     }
 
     footer{
-      text-align:center; font-size:.9rem; margin:28px 0 10px; color:#8c8c9b;
+      text-align:center;
+      font-size:.9rem;
+      margin:28px 0 10px;
+      color:#8c8c9b;
     }
   </style>
 </head>
@@ -98,17 +164,14 @@
 <body>
   <div class="wrap">
 
-    <div class="topbar">
-      <a href="./index.html" class="back-home">← Back to Home</a>
-    </div>
-
-    <header>
-      <div class="tilly-sig"><a href="./index.html">Tilly Norwood</a></div>
-      <div class="ai-hq">Official Fan Page</div>
+    <header class="site-header">
+      <div class="tilly-banner">
+        <span>Tilly Norwood</span>
+      </div>
+      <div class="tagline">Official Fan Page</div>
     </header>
 
     <div class="shorts-grid">
-
       <!-- SHORT 1 -->
       <div class="short">
         <iframe 
@@ -132,13 +195,12 @@
           title="Tilly Norwood Short 3"
           allowfullscreen></iframe>
       </div>
-
     </div>
 
-    <section class="seo-block">
-      <h2>Tilly Norwood — YouTube Shorts</h2>
+    <section class="seo-block" aria-labelledby="seo-title">
+      <h2 id="seo-title">Tilly Norwood — YouTube Shorts</h2>
       <p>
-        This is the official Tilly Norwood **fan page**. These Shorts highlight her most expressive,
+        This is the official Tilly Norwood <strong>fan page</strong>. These Shorts highlight her most expressive,
         cinematic moments — punchy edits, clean 9:16 framing, and the signature visual style
         fans know her for.
       </p>
@@ -146,7 +208,7 @@
 
     <section class="counter-wrap">
       <div class="counter-card">
-        <div>Total views across all Tilly videos</div>
+        <div class="counter-line">Total views across all Tilly videos</div>
         <div class="counter-number">70,000</div>
         <div class="counter-updated">Last updated: <strong>Nov 22, 2025</strong></div>
       </div>
