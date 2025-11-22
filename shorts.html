@@ -13,18 +13,18 @@
   </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tilly Norwood • YouTube Shorts — Official Fan Page</title>
+  <title>Tilly Norwood • YouTube Shorts</title>
   <meta name="description" content="Watch the latest Tilly Norwood YouTube Shorts — cinematic AI scenes in 9:16.">
   <link rel="canonical" href="https://tilly-norwood.net/shorts.html">
 
-  <!-- Fonts -->
+  <!-- Font for logo -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --bg:#0b0b0e;
       --text:#f6f6f8;
-      --accent:#ff5fa2; /* pink for Tilly logo */
+      --accent:#ff5fa2; /* pink logo */
       --muted:#b6b6c2;
       --card:#111318;
       --shadow:0 8px 22px rgba(0,0,0,.35);
@@ -45,35 +45,51 @@
       padding:0 20px 20px;
     }
 
-    /* TOP BANNER LIKE SCREENSHOT */
+    /* TOPBAR WITH BACK TO HOME */
+    .topbar{
+      margin:0 -20px;
+      padding:10px 20px 6px;
+      background:#050506;
+      display:flex;
+      justify-content:flex-start;
+    }
+    .back-home{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.45rem .9rem;
+      border-radius:9999px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.9rem;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:var(--shadow);
+    }
+    .back-home:hover{
+      opacity:.9;
+      transform:translateY(-1px);
+    }
+
+    /* HEADER BANNER */
     .site-header{
       margin:0 -20px 18px;
-    }
-    .tilly-banner{
+      padding:14px 20px 16px;
       background:#050506;
-      padding:10px 24px 12px;
-      text-align:left;
+      text-align:center;
     }
     .tilly-banner span{
       font-family:'Great Vibes',cursive;
-      font-size:40px;
+      font-size:64px;
       color:var(--accent);
-      letter-spacing:.02em;
-      white-space:nowrap;
+      letter-spacing:.03em;
+      display:inline-block;
     }
     @media (min-width:768px){
       .tilly-banner span{
-        font-size:52px;
+        font-size:82px;
       }
-    }
-
-    .tagline{
-      text-align:center;
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:#e4e4eb;
-      margin-top:8px;
     }
 
     /* SHORTS GRID */
@@ -84,7 +100,6 @@
       margin-top:18px;
       grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     }
-
     .short{
       position:relative;
       width:100%;
@@ -139,7 +154,7 @@
       box-shadow:0 10px 30px rgba(0,0,0,.25);
     }
     .counter-line{
-      font-size:1.0rem;
+      font-size:1rem;
     }
     .counter-number{
       font-weight:900;
@@ -164,15 +179,18 @@
 <body>
   <div class="wrap">
 
+    <div class="topbar">
+      <a href="./index.html" class="back-home" aria-label="Back to Home">← Back to Home</a>
+    </div>
+
     <header class="site-header">
       <div class="tilly-banner">
         <span>Tilly Norwood</span>
       </div>
-      <div class="tagline">Official Fan Page</div>
     </header>
 
     <div class="shorts-grid">
-      <!-- SHORT 1 -->
+      <!-- Short 1 -->
       <div class="short">
         <iframe 
           src="https://www.youtube.com/embed/0NaQ0gTqkQA?rel=0&modestbranding=1&playsinline=1"
@@ -180,7 +198,7 @@
           allowfullscreen></iframe>
       </div>
 
-      <!-- SHORT 2 -->
+      <!-- Short 2 -->
       <div class="short">
         <iframe 
           src="https://www.youtube.com/embed/sRjCTOnSMH8?rel=0&modestbranding=1&playsinline=1"
@@ -188,7 +206,7 @@
           allowfullscreen></iframe>
       </div>
 
-      <!-- SHORT 3 -->
+      <!-- Short 3 -->
       <div class="short">
         <iframe 
           src="https://www.youtube.com/embed/8bsN3pkBzbo?rel=0&modestbranding=1&playsinline=1"
@@ -200,9 +218,8 @@
     <section class="seo-block" aria-labelledby="seo-title">
       <h2 id="seo-title">Tilly Norwood — YouTube Shorts</h2>
       <p>
-        This is the official Tilly Norwood <strong>fan page</strong>. These Shorts highlight her most expressive,
-        cinematic moments — punchy edits, clean 9:16 framing, and the signature visual style
-        fans know her for.
+        This is a fan-run hub for Tilly Norwood’s vertical clips — clean 9:16 framing, expressive performances,
+        and tight edits designed for phones. Tap any Short above to watch, and check back as more scenes are added.
       </p>
     </section>
 
