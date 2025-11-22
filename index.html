@@ -45,6 +45,16 @@
     .tilly-sig a { text-decoration:none; color:inherit; }
     .tagline { font-family:'Cinzel',serif; font-weight:700; font-size:14px; letter-spacing:.08em; }
 
+    /* NEW: small fan-page line */
+    .fan-tag {
+      margin-top:4px;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(246,246,248,.7);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+    }
+
     nav { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
     .btn { padding:.55rem 1rem; border-radius:999px; background:#111; border:1px solid #1c1f27; color:#fff; text-decoration:none; font-weight:600; }
     .btn:hover { opacity:.9; transform:translateY(-1px); }
@@ -55,7 +65,7 @@
       white-space:nowrap; 
       font-family:'Great Vibes',cursive; 
       font-size:clamp(22px,3vw,34px); 
-      color:var(--sadie-blue); /* UPDATED TO SADIE BLUE */
+      color:var(--sadie-blue);
       animation:marq 18s linear infinite; 
     }
 
@@ -108,17 +118,20 @@
     <header>
       <div class="tilly-sig"><a href="/">Tilly Norwood</a></div>
       <div class="tagline">The World’s First AI Actress</div>
+      <div class="fan-tag">Official Fan Page • Not affiliated with the original creator</div>
 
       <nav>
         <a class="btn" href="/shorts.html">🎬 Shorts</a>
         <a class="btn" href="/videos">🎞️ Videos</a>
-        <a class="btn btn-new" href="https://www.youtube.com/@TillyNorwoodTV" target="_blank">✨ YouTube</a>
+        <!-- UPDATED to DustwoodFilms -->
+        <a class="btn btn-new" href="https://www.youtube.com/@DustwoodFilms" target="_blank">✨ YouTube</a>
       </nav>
     </header>
 
     <div class="marquee-wrap">
-      <div class="marquee-line">🌹 Welcome to my stage.&nbsp;&nbsp; I’m so glad you came!&nbsp;&nbsp; Our journey together begins here . . . 🌹
-</div>
+      <div class="marquee-line">
+        🌹 Welcome to my stage.&nbsp;&nbsp; I’m so glad you came!&nbsp;&nbsp; Our journey together begins here . . . 🌹
+      </div>
     </div>
 
     <figure class="hero">
@@ -137,7 +150,8 @@
             <div style="opacity:.85">Watch the newest Tilly release on YouTube.</div>
           </div>
           <div class="chiprow">
-            <a class="chip" href="https://www.youtube.com/@TillyNorwoodTV" target="_blank">▶️ Watch</a>
+            <!-- UPDATED to DustwoodFilms -->
+            <a class="chip" href="https://www.youtube.com/@DustwoodFilms" target="_blank">▶️ Watch</a>
           </div>
         </div>
       </div>
