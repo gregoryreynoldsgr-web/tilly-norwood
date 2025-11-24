@@ -13,7 +13,7 @@
   </script>
 
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tilly Norwood • Featured Video</title>
+  <title>Tilly Norwood • Featured Moment</title>
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -22,7 +22,14 @@
     :root{
       --bg:#0b0b0e;
       --text:#f6f6f8;
+      --muted:#9d9db0;
       --accent:#ff5fa2; /* pink signature */
+      --card:#14141a;
+      --border:#272734;
+    }
+
+    *{
+      box-sizing:border-box;
     }
 
     body{
@@ -41,10 +48,13 @@
 
     /* BACK TO HOME */
     .topbar{
-      margin:0 -22px 0;
-      padding:16px 22px 10px;
+      margin:0 -22px;
+      padding:14px 22px 10px;
       background:#050506;
       display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
     }
     .back-home{
       color:#fff;
@@ -52,93 +62,217 @@
       padding:.45rem .9rem;
       border-radius:9999px;
       text-decoration:none;
-      font-weight:700;
+      font-weight:600;
+      font-size:.9rem;
       border:1px solid rgba(255,255,255,0.08);
+      white-space:nowrap;
     }
     .back-home:hover{ opacity:.9; }
+
+    .topbar-note{
+      font-size:.8rem;
+      color:var(--muted);
+      max-width:320px;
+      text-align:right;
+    }
 
     /* HEADER SIGNATURE */
     .header-bar{
       text-align:center;
-      margin:0 -22px 28px;
-      padding:16px 22px 22px;
+      margin:0 -22px 26px;
+      padding:18px 22px 22px;
       background:#050506;
+      border-bottom:1px solid rgba(255,255,255,0.04);
     }
     .tilly-sig{
       font-family:'Great Vibes',cursive;
       font-size:78px;
+      line-height:1;
       color:var(--accent);
+    }
+    .tagline{
+      margin-top:6px;
+      font-size:.95rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    /* LAYOUT */
+    .grid{
+      display:grid;
+      grid-template-columns:minmax(0,3fr) minmax(0,2fr);
+      gap:26px;
+      align-items:flex-start;
+    }
+    @media (max-width:800px){
+      .grid{
+        grid-template-columns:1fr;
+      }
     }
 
     /* VIDEO FRAME */
+    .video-card{
+      background:var(--card);
+      border-radius:18px;
+      padding:16px 16px 18px;
+      border:1px solid var(--border);
+      box-shadow:0 18px 40px rgba(0,0,0,.7);
+    }
+    .video-label{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .video-title{
+      font-size:1.25rem;
+      font-weight:600;
+      margin-bottom:14px;
+    }
     .video-box{
       width:100%;
-      max-width:900px;
-      margin:0 auto;
       aspect-ratio:16/9;
       background:#000;
-      border-radius:16px;
+      border-radius:14px;
       overflow:hidden;
-      box-shadow:0 8px 28px rgba(0,0,0,.55);
     }
     iframe{
       width:100%;
       height:100%;
       border:0;
     }
+    .video-note{
+      margin-top:12px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
 
-    /* SUBSCRIBE MESSAGE */
-    .subscribe-note{
-      margin:22px auto 0;
+    /* SIDE COPY */
+    .side-card{
+      background:var(--card);
+      border-radius:18px;
+      padding:18px 18px 20px;
+      border:1px solid var(--border);
+    }
+    .side-heading{
+      font-size:1rem;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+    .side-text{
+      font-size:.92rem;
+      line-height:1.6;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .side-list{
+      margin:8px 0 0 1rem;
+      padding:0;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .side-list li{
+      margin-bottom:4px;
+    }
+
+    /* SUBSCRIBE AREA */
+    .subscribe-block{
+      margin-top:28px;
       text-align:center;
-      font-size:1.1rem;
-      color:#ff5fa2;
+    }
+    .subscribe-note{
       font-family:'Great Vibes',cursive;
-      font-size:36px;
+      font-size:34px;
+      color:var(--accent);
     }
     .subscribe-small{
-      font-size:1rem;
+      font-size:.95rem;
       color:#ccc;
-      margin-top:6px;
-      font-family:system-ui;
+      margin-top:4px;
     }
 
     footer{
       text-align:center;
-      font-size:.9rem;
+      font-size:.85rem;
       color:#8c8c9b;
-      margin:40px 0 16px;
+      margin:36px 0 16px;
     }
   </style>
 </head>
 
 <body>
-
 <div class="wrap">
 
   <div class="topbar">
     <a class="back-home" href="./index.html">← Back to Home</a>
+    <div class="topbar-note">
+      An independent fan site celebrating the AI actress known as Tilly.
+    </div>
   </div>
 
   <header class="header-bar">
     <div class="tilly-sig">Tilly Norwood</div>
+    <div class="tagline">featured moment • dustwood films fan edit</div>
   </header>
 
-  <!-- SINGLE FEATURED VIDEO -->
-  <div class="video-box">
-    <iframe 
-      src="https://www.youtube.com/embed/emeFzk0A9VA?rel=0&modestbranding=1&playsinline=1"
-      title="Tilly Norwood — Featured"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <main class="grid" aria-label="Featured Tilly Norwood video">
+    <!-- VIDEO COLUMN -->
+    <section class="video-card">
+      <div class="video-label">Featured Clip</div>
+      <div class="video-title">A tiny moment that says everything</div>
 
-  <div class="subscribe-note">More stories are coming soon…</div>
-  <div class="subscribe-small">If you enjoyed this one, please subscribe — it truly helps.</div>
+      <div class="video-box">
+        <iframe
+          src="https://www.youtube.com/embed/emeFzk0A9VA?rel=0&modestbranding=1&playsinline=1"
+          title="Tilly Norwood — Featured Clip"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-  <footer>© 2025 Tilly-Norwood.net — Unofficial Fan Page</footer>
+      <p class="video-note">
+        Hit play, go full-screen if you’d like, and let the expression, the timing and
+        the little details sink in. That’s where the fun of watching Tilly really lives.
+      </p>
+    </section>
+
+    <!-- COPY COLUMN -->
+    <aside class="side-card">
+      <h2 class="side-heading">What you’re watching</h2>
+      <p class="side-text">
+        This page highlights one short scene that captures why so many people are
+        fascinated by Tilly Norwood: expressive eyes, subtle movement, and that
+        feeling that she might step out of the screen at any second.
+      </p>
+
+      <p class="side-text">
+        Every clip on this fan site is created as a respectful tribute to the original
+        character and to the millions of viewers who discovered her first. We’re here
+        to enjoy the performance and to explore what’s possible when new tools put
+        filmmaking in the hands of everyday creators.
+      </p>
+
+      <ul class="side-list">
+        <li>Unofficial, fan-run site</li>
+        <li>No affiliation with the original rights holder</li>
+        <li>Made for people who just enjoy watching Tilly act</li>
+      </ul>
+    </aside>
+  </main>
+
+  <section class="subscribe-block">
+    <div class="subscribe-note">More stories are coming soon…</div>
+    <div class="subscribe-small">
+      If this little moment made you smile, please subscribe to Dustwood Films on YouTube.
+      It tells the algorithm that Tilly’s world is worth sharing.
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Tilly-Norwood.net — Unofficial Fan Page. Not affiliated with Particle 6 or any original rights holder.
+  </footer>
 
 </div>
-
 </body>
 </html>
